@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 {
 	int option; //Initializing Option To Use In My GetOpt
 
-	size_t buf_size = 1000;//=====================
+	size_t buf_size = 1000;//================
 	size_t num_byte = 0;//    		|
 	int  caesar_shift_amount = 0;// 	|=== Used In The Switch For GetOpt 
 	int  rotate_shift_amount = 0;//     	|
