@@ -1,0 +1,82 @@
+#!/bin/bash
+
+#     Anushka Verma
+#     Course: CSCI Linux 330
+#     Assignment 6
+#     DUE: 10/30/20
+
+#     PURPOSE: Write a shell script that will allow its user to create, view, and modify a simple text-based database that contains records about automobiles.
+
+dbname=$1
+command=$2
+if [[ "$command" == 'new' ]]; then #if user inputs the command new, then it creates a new Database
+
+	if [[ -s $dbname ]]; then #if the database already exists, then it displays the message 
+		echo "Sorry, But The Database Already Exists!!"
+		exit
+	else #[[ -z $command ]]; #then
+		if ["$3" = ""]; then
+			echo -e "Untitled Database" >> $dbname
+		else
+			echo "$3" >> "$dbname"
+		fi
+	fi
+	if [ -f "$dbname" ]; then #else it creates a new database and displays the message
+		#echo $3 >> $dbname
+		echo -e "New Database Created"	
+		exit
+	fi
+
+fi  #ends the if statement
+
+if [[ "$command" == 'add' ]]; then #if user can just input the add command along with their desired entry
+	echo "$3 $4 $5 $6" >> $dbname  #once the user puts in all the details with the command add, then the message displays
+	echo "Successfully Added A Record To The Database"
+fi  #ends the if statement
+
+if [[ "$command" == 'show' ]]; then  #if user inputs the command show, then it shows the records in the Database
+
+	if [ $3 == 'all' ]; then  #if user inputs the command show all, then it shows all the records in the Database
+		awk '{print}' $dbname 
+		exit
+	elif [ $3 == 'single' ]; then  #if user inputs the command show single, then it shows only 1 record in the Database
+		if [ "$4" = "" ]; then
+			echo "Please Specify The Entry You Would Like To Show. Something Like (command DB show single <line Number>): "
+			exit
+		fi
+		awk 'END{print ((NR-1))}' $dbname
+	elif [ $3 == 'range' ]; then  #if user inputs the command show range, then it shows the range of the records in the Database
+		if [ "$4" = "" ] & [ "$5" = "" ]; then
+			echo "Please Specify The Entry You Would Like To Show. Something Like (command DB show range <line> <Number>): "
+			exit
+		fi
+		awk 'NR==$4, NR==$5{print ((NR-1))}' $dbname
+	else
+		echo "I Am Sorry, I Didn't Get That!!"
+	fi #ends the if statement
+fi #ends the if statement
+
+NumlBegin=$4
+NumlEnd=$5
+if [[ "$command" == 'delete' ]]; then #if user inputs the command delete, then it shows the remaining records in the Database
+
+	if [ $3 == 'all' ]; then  #if user inputs the command delete all, then it shows all the records deleted in the Database
+		sed  "d" $dbname > tmp
+		echo "All Records Deleted!!" 
+		mv tmp $dbname
+	fi #ends the if statement
+	if [ $3 == 'single' ]; then   #if user inputs the command delete single, then it shows the one record deleted in the Database as well as, displays the message
+		sed -i -e "3,3d" DB
+		echo "1 Record Deleted"
+
+	fi #ends the if statement
+	if [ $3 == 'range' ]; then   #if user inputs the command delete range, then it shows the range of records deleted in the Database
+		sed  "$4 $5d" $dbname > tmp
+		mv tmp $dbname
+		echo `expr $NumlEnd - $NumlBegin` "Range Successfully Deleted!!"
+	fi #ends the if statement	
+fi  #ends the if statement
+
+if [[ "$command" == 'count' ]]; then   #if user inputs the command count, then it counts the amount of the records in the Database
+	wc -l < $dbname
+fi  #ends the if statement
