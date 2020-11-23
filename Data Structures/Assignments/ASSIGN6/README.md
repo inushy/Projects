@@ -1,0 +1,9 @@
+### CSCI 340 - Data Structures and Algorithm Analysis
+
+# CSCI340 - The Josephus Problem
+
+The problem is known as the **Josephus Problem** (or Josephus permutation) and postulates a group of people of size N >= 1 are standing in a circle waiting to be eliminated. Counting begins at a specified point in the circle and proceeds around the circle in a specified direction. After a specified number of M >= 1 people are counted, the M^th person in the circle is eliminated. The procedure is repeated with the remaining people, starting with the next person, going in the same direction and counting the same number of people, until only one person remains.
+
+For example, suppose that **M = 3** and there are **N = 5** people named **A**, **B**, **C**, **D** and **E**. We count three people starting at **A**, so that **C** is eliminated first. We then begin at **D** and count **D**, **E** and back to **A**, so that **A** is eliminated next. Then we count **B**, **D** and **E**, and finally **B**, **D** and **B**, so that **D** is the one who remains last.
+
+For this computer assignment, you are to write and implement a C++ program to simulate and solve the Josephus problem. The input to the program is the number `M` and a `list of N names`, which is clockwise ordering of the circle, beginning with the person from whom the count is to start. After each removal, the program should print the names of all people in the circle until only one person remains. However, to save printing space, print the names of the remaining people only after `K >= 1` eliminations, where `K` is also an input argument to the program. The input arguments `N`, `M` and `K` can be entered from `stdin` in the given order. (see **josephus.d** for values)
