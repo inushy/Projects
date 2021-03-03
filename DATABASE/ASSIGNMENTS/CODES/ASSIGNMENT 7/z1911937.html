@@ -1,0 +1,158 @@
+<!-- Anushka Verma <z1911937>
+     Database
+     Assignment 7 - HTML FORM
+     03/01/2021
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <link rel="stylesheet" href="z1911937.css">	  
+        <meta charset="utf-8">
+        <title>ANUSHKA VERMA, Z1911937</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <h1>CSCI 466 Assignment 7</h1>
+            <main>
+                <div class="column" id="main-container">
+                    <div class="row block">
+                        <div class="column">
+                            <h2>About Me</h2>
+                            <p>
+                                Highly creative and multi-talented Graphic Designer with experience in development of branding, 
+                                marketing collaterals and print design. Exceptional collaborative and interpersonal skills; 
+                                dynamic team player with well developed written and verbal communication abilities. 
+                                Skilled in client and vendor relations and negotiations. Passionate and inventive creator of 
+                                innovative marketing collaterals; accustomed to performing in deadline-driven environments with an 
+                                emphasis on working within budget requirements.
+                                Currently pursuing my second Bachelors Degree in Computer Science as well as, on the lookout
+                                for Software Engineer Summer Internships. 
+                            </p>
+                        </div>
+                        <div class="column">
+                            <h2>&nbsp;</h2>
+                            <div id="photo-frame">
+                                <a href="https://www.instagram.com/ianushkaverma/">
+                                    <div id="photo" alt="My Picture for the About Me"></div>
+                                </a>                    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column block">
+                        <h2>Definition of my name</h2>
+                        <p>
+                            The feminine name Anushka in Sanskrit is used as a term of endearment, meaning "ray of light"
+                            or "lightning". However, it is actually a variant of Annushka, which is a Russian diminutive 
+                            of Anna. Anna is a version of the name Hannah, which was used in Latin and Greek back in the
+                            Old Testament. The name Hannah is taken from Hebrew and means "grace" and "favour".
+                        </p>
+                    </div>
+                    <div class="column block">
+                        <h2>Favorite Quote Of The Month</h2>
+                        <p>
+                            "Happiness is the experience of loving life. Being happy is being in love with that momentary 
+                            experience. And love is looking at someone or even something and seeing the absolute best 
+                            in him/her or it. Love is happiness with what you see. So love and happiness really are 
+                            the same thing...just expressed differently." ~Robert McPhillips
+                        </p>
+                    </div>
+                    <div class="column block">
+                        <h3>My 10 Favorite Foods</h3>
+                            <ol type="1">
+                                <li>Biryani</li>
+                                <li>Tom-Yum Soup</li>
+                                <li>Chicken Curry</li>
+                                <li>Pad-Thai</li>
+                                <li>Fried Rice</li>
+                                <li>Coconut Fish Curry</li>
+                                <li>Pizza</li>
+                                <li>Pasta</li>
+                                <li>Wings</li>
+                                <li>Kung-Pao Chicken</li>
+                            </ol>
+                    </div>
+                    <div id="last-section" class="row block">
+                        <div class="column last-section">
+                            <h5>5x5 Multiplication Table</h5>
+                            <table>
+                                <TR>
+                                    <td>X</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                </TR>
+                                <TR>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                </TR>
+                                <TR>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>8</td>
+                                    <td>16</td>
+                                    <td>18</td>
+                                </TR>
+                                <TR>
+                                    <td>4</td>
+                                    <td>4</td>
+                                    <td>8</td>
+                                    <td>16</td>
+                                    <td>32</td>
+                                    <td>36</td>
+                                </TR>
+                                <TR>
+                                    <td>8</td>
+                                    <td>8</td>
+                                    <td>16</td>
+                                    <td>32</td>
+                                    <td>64</td>
+                                    <td>72</td>
+                                </TR>
+                                <TR>
+                                    <td>9</td>
+                                    <td>9</td>
+                                    <td>18</td>
+                                    <td>36</td>
+                                    <td>72</td>
+                                    <td>81</td>
+                                </TR>
+                            </table>
+                        </div>
+                        <section class="form-section last-section">
+                            <h6>Come Say Hi!</h6>
+                            <form action=" http://students.cs.niu.edu/~z035690/asnsubmit2021.php" method="POST">
+                                <input type="text" name="carrot"/> 
+                                <h6> Which is your favorite?</h6>
+                                <input type="checkbox" id="first" name="food"/>
+                                <label for="first">Pizza
+                                <input type="checkbox" id="second" name="food"/>
+                                <label for="second">Tacos
+                                <input type="checkbox" id="third" name="food"/>
+                                <label for="third">Burgers
+                                <h6> Which Radio do you choose? </h6> 
+                                <input type="radio" name="xyz"/>X
+                                <input type="radio" name="xyz"/>Y
+                                <input type="radio" name="xyz" checked/>Z
+                                <input type="hidden" name="zid" value="z1911937"/> <br />
+                                <input type="submit" value="Carpe Diem"/>
+                            </form>
+                        </section>
+                    </div>    
+                </div>
+            </main>
+            <div id="footer">
+                <text>&copy;2021 Anushka Verma</text>
+            </div>
+        </div>
+    </body>
+</html>
