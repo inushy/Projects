@@ -1,0 +1,194 @@
+
+                    J E S 2  J O B  L O G  --  S Y S T E M  2 9 6 4  --  N O D E  S V S C J E S 2
+
+ 
+ 10.58.35 JOB03733 ---- WEDNESDAY, 03 MAR 2021 ----
+ 10.58.35 JOB03733  IRR010I  USERID KC03D28  IS ASSIGNED TO THIS JOB.
+ 10.58.35 JOB03733  ICH70001I KC03D28  LAST ACCESS AT 10:57:00 ON WEDNESDAY, MARCH 3, 2021
+ 10.58.36 JOB03733  $HASP373 KC03D28A STARTED - INIT 1    - CLASS A        - SYS 2964
+ 10.58.36 JOB03733  $HASP395 KC03D28A ENDED - RC=0000
+
+ ------ JES2 JOB STATISTICS ------
+
+
+   03 MAR 2021 JOB EXECUTION DATE
+
+
+           106 CARDS READ
+
+
+           171 SYSOUT PRINT RECORDS
+
+
+             0 SYSOUT PUNCH RECORDS
+
+
+            17 SYSOUT SPOOL KBYTES
+
+
+          0.00 MINUTES EXECUTION TIME
+         1 //KC03D28A JOB ,'ANUSHKA VERMA' ,MSGCLASS=H                             JOB03733
+         2 //JSTEP01  EXEC PGM=ASSIST
+         3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR
+         4 //SYSPRINT DD SYSOUT=*
+         5 //SYSIN    DD *
+           //*
+         6 //FT05F001 DD DSN=KC02038.CSCI360.DATAFA20(LABEX3DA),DISP=SHR
+           //*
+         7 //FT06F001 DD SYSOUT=*
+           //*
+         8 //SYSPRINT DD SYSOUT=*
+         9 //
+ ICH70001I KC03D28  LAST ACCESS AT 10:57:00 ON WEDNESDAY, MARCH 3, 2021
+ IEFA111I KC03D28A IS USING THE FOLLOWING JOB RELATED SETTINGS:
+          SWA=ABOVE,TIOT SIZE=32K,DSENQSHR=DISALLOW,GDGBIAS=JOB
+ IEF236I ALLOC. FOR KC03D28A JSTEP01
+ IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IEF237I JES2 ALLOCATED TO SYSIN
+ IGD103I SMS ALLOCATED TO DDNAME FT05F001
+ IEF237I JES2 ALLOCATED TO FT06F001
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IEF142I KC03D28A JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+ IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB
+ IEF285I   KC03D28.KC03D28A.JOB03733.D0000102.?         SYSOUT
+ IEF285I   KC03D28.KC03D28A.JOB03733.D0000101.?         SYSIN
+ IGD104I KC02038.CSCI360.DATAFA20                     RETAINED,  DDNAME=FT05F001
+ IEF285I   KC03D28.KC03D28A.JOB03733.D0000103.?         SYSOUT
+ IEF285I   KC03D28.KC03D28A.JOB03733.D0000104.?         SYSOUT
+ IEF373I STEP/JSTEP01 /START 2021062.1058
+ IEF032I STEP/JSTEP01 /STOP  2021062.1058
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC
+         VIRT:   584K  SYS:   244K  EXT:        0K  SYS:    11988K
+         ATB- REAL:                  1056K  SLOTS:                     0K
+              VIRT- ALLOC:      13M SHRD:       0M
+ IEF375I  JOB/KC03D28A/START 2021062.1058
+ IEF033I  JOB/KC03D28A/STOP  2021062.1058
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC
+
+ *** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT
+
+ 
+
+                                                                                                                PAGE    1
+
+   LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                       1 ******************************************************************
+                                       2 *                                                                *
+                                       3 *  CSCI 360             LAB EXERCISE 3              SPRING 2021  *
+                                       4 *                                                                *
+                                       5 *  DATE DUE:  02/24/2021                                         *
+                                       6 *  TIME DUE:  11:59 PM                                           *
+                                       7 *                                                                *
+                                       8 *  AUTHOR:    ANUSHKA VERMA                                      *
+                                       9 *             (Z1911937)                                         *
+                                      10 *                                                                *
+                                      11 *  DESCRIPTION:                                                  *
+                                      12 *    THIS PROGRAM READS FROM FILES AND PERFORMS ARITHMETIC       *
+                                      13 *    OPERATIONS USING A LOOP.                                    *
+                                      14 *                                                                *
+                                      15 *  REGISTER USAGE:                                               *
+                                      16 *    REGISTER 1    AFFECTED BY XDECI                             *
+                                      17 *    REGISTER 2    LOADS REG 2                                   *
+                                      18 *    REGISTER 3    LOADS REG 5                                   *
+                                      19 *    REGISTER 4    SETS REG TO 0, CLEARING                       *
+                                      20 *    REGISTER 5    LOADS REG 100                                 *
+                                      21 *    REGISTER 6    SETS REG TO 0, CLEARING                       *
+                                      22 *    REGISTER 7    SETS REG TO 0, CLEARING                       *
+                                      23 *    REGISTER 8    SETS REG TO 0, CLEARING                       *
+                                      24 *    REGISTER 9    SETS REG TO 0, CLEARING                       *
+                                      25 *    REGISTER 10   SETS REG TO 0, CLEARING                       *
+                                      26 *    REGISTER 11   SETS REG TO 0, CLEARING                       *
+                                      27 *                                                                *
+                                      28 ******************************************************************
+                                      29 *          COL. 10
+                                      30 *          |     COL. 16
+                                      31 *          |     |
+                                      32 *          v     v
+ 000000                               33 MAIN       CSECT
+ 000000                               34            USING MAIN,15        ESTABLISH ADDRESSABILITY ON REG 15
+ 000000 4120 0002            00002    35            LA    2,2            LOAD 2 INTO REG 2
+ 000004 4130 0005            00005    36            LA    3,5            LOAD 5 INTO REG 3
+ 000008 4140 0000            00000    37            LA    4,0            SETTING REG TO 0 FOR CLEARING
+ 00000C E000 F070 0050 00070          38            XREAD BUFFER,80      PRIMMING READ
+                                      39 *
+ 000012 4740 F06E            0006E    40 FRSTLOOP   BC    B'0100',ENDLOOP  IF EOF, END THE LOOP
+                                      41 *
+ 000016 4140 0000            00000    42            LA    4,0            SETTING REG TO 0 FOR CLEARING
+ 00001A 4160 0000            00000    43            LA    6,0            SETTING REG TO 0 FOR CLEARING
+ 00001E 4170 0000            00000    44            LA    7,0            SETTING REG TO 0 FOR CLEARING
+ 000022 4180 0000            00000    45            LA    8,0            SETTING REG TO 0 FOR CLEARING
+ 000026 4190 0000            00000    46            LA    9,0            SETTING REG TO 0 FOR CLEARING
+ 00002A 41A0 0000            00000    47            LA    10,0           SETTING REG TO 0 FOR CLEARING
+ 00002E 41B0 0000            00000    48            LA    11,0           SETTING REG TO 0 FOR CLEARING
+                                      49 *
+ 000032 4150 0064            00064    50            LA    5,100          LOAD 100 INTO REG 5
+                                      51 *
+ 000036 5370 F070            00070    52            XDECI 7,BUFFER       CONVERTS THE NUMBER INTO BINARY
+
+                                                                                                                PAGE    2
+
+   LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+ 00003A 5270 F0C6            000C6    53            XDECO 7,OUTPUT       CONVERTS INPUT INTO PRINTABLE FORM
+                                      54 *
+ 00003E 5391 0000            00000    55            XDECI 9,0(1)         READS SECOND VALUE FROM FILE
+ 000042 5290 F0DA            000DA    56            XDECO 9,OUTPUT2      CONVERTS INPUT INTO PRINTABLE FORM
+                                      57 *
+ 000046 53B1 0000            00000    58            XDECI 11,0(1)        READS THIRD VALUE FROM FILE
+ 00004A 52B0 F0EE            000EE    59            XDECO 11,OUTPUT3     CONVERTS INPUT INTO PRINTABLE FORM
+                                      60 *
+ 00004E 1C67                          61            MR    6,7            MULTIPLIES REG 7 WITH REG 6
+ 000050 1C62                          62            MR    6,2            MULTIPLIES REG 2 WITH REG 6
+ 000052 1C83                          63            MR    8,3            MULTIPLIES REG 3 WITH REG 8
+ 000054 1D4B                          64            DR    4,11           DIVIDES REG 13 WITH REG 4
+ 000056 1A97                          65            AR    9,7            ADDS REG 7 WITH REG 9
+ 000058 1A95                          66            AR    9,5            ADDS REG 5 WITH REG 9
+ 00005A 5290 F101            00101    67            XDECO 9,OUTPUT4      CONVERTS INPUT INTO PRINTABLE FORM
+ 00005E E020 F0C0 0085 000C0          68            XPRNT PRINT,133      PRINTS OUTPUT
+ 000064 E000 F070 0050 00070          69            XREAD BUFFER,80      READS THE NEXT RECORDS
+ 00006A 47F0 F012            00012    70            BC    B'1111',FRSTLOOP GO TO THE TOP OF THIS LOOP
+ 00006E                               71 ENDLOOP    DS    0H             END OF THIS LOOP
+                                      72 *
+ 00006E 07FE                          73            BCR   B'1111',14     UNCONDITIONAL RETURN TO CALLER
+                                      74            LTORG                LITERAL ORGANIZATION
+                                      75 *
+ 000070                               76 BUFFER     DS    CL80           DEFINING DATA INPUT
+ 0000C0 40                            77 PRINT      DC    C' '           PRINT LINE, SINGLE-SPACED
+ 0000C1 A7F1407E40                    78            DC    C'x1 = '       PRINTS THE LABEL x1
+ 0000C6                               79 OUTPUT     DS    CL12           DISPLAYS SPACE IN OUPUT
+                                      80 *
+ 0000D2 404F40                        81            DC    C' | '         PRINTS '|' TO CREATE BORDER
+ 0000D5 40A7F2407E                    82            DC    C' x2 ='       PRINTS THE LABEL x2
+ 0000DA                               83 OUTPUT2    DS    CL12           DISPLAYS SPACE IN OUPUT
+                                      84 *
+ 0000E6 404F40                        85            DC    C' | '         PRINTS '|' TO CREATE BORDER
+ 0000E9 40A7F3407E                    86            DC    C' x3 ='       PRINTS THE LABEL x3
+ 0000EE                               87 OUTPUT3    DS    CL12           DISPLAYS SPACE IN OUPUT
+                                      88 *
+ 0000FA 404F40                        89            DC    C' | '         PRINTS '|' TO CREATE BORDER
+ 0000FD 40A8407E                      90            DC    C' y ='        PRINTS THE LABEL y
+ 000101                               91 OUTPUT4    DS    CL12           DISPLAYS SPACE IN OUPUT
+ 00010D 4040404040404040              92            DC    60C' '         FILLER
+                                      93            END   MAIN
+
+ ***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS
+
+ *** DYNAMIC CORE AREA USED:  LOW:    3768 HIGH:     504 LEAVING:  489296 FREE BYTES. AVERAGE:       45 BYTES/STMT ***
+
+ *** ASSEMBLY TIME =    0.000 SECS,    94000 STATEMENTS/SEC ***
+
+ *** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***
+ x1 =           20 |  x2 =          30 |  x3 =          17 |  y =         955
+ x1 =          120 |  x2 =          70 |  x3 =           5 |  y =       29170
+ x1 =            0 |  x2 =          20 |  x3 =          22 |  y =         104
+ x1 =           40 |  x2 =          10 |  x3 =           2 |  y =        3300
+ x1 =           90 |  x2 =           0 |  x3 =           4 |  y =       16225
+ x1 =           10 |  x2 =          20 |  x3 =          11 |  y =         309
+ x1 =           30 |  x2 =           0 |  x3 =           3 |  y =        1833
+ x1 =           10 |  x2 =          10 |  x3 =           5 |  y =         270
+ x1 =           60 |  x2 =          20 |  x3 =          42 |  y =        7302
+ x1 =          150 |  x2 =           0 |  x3 =           1 |  y =       45100
+
+ *** EXECUTION TIME =    0.000 SECS.       256 INSTRUCTIONS EXECUTED -   256000 INSTRUCTIONS/SEC ***
+
+ *** AM004 - NORMAL USER TERMINATION BY RETURN ***

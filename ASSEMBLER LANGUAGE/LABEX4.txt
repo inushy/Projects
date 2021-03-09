@@ -1,0 +1,259 @@
+
+                    J E S 2  J O B  L O G  --  S Y S T E M  2 9 6 4  --  N O D E  S V S C J E S 2
+
+ 
+ 18.45.55 JOB04080 ---- MONDAY,    08 MAR 2021 ----
+ 18.45.55 JOB04080  IRR010I  USERID KC03D28  IS ASSIGNED TO THIS JOB.
+ 18.45.55 JOB04080  ICH70001I KC03D28  LAST ACCESS AT 18:36:00 ON MONDAY, MARCH 8, 2021
+ 18.45.55 JOB04080  $HASP373 KC03D28A STARTED - INIT 2    - CLASS A        - SYS 2964
+ 18.45.55 JOB04080  $HASP395 KC03D28A ENDED - RC=0000
+
+ ------ JES2 JOB STATISTICS ------
+
+
+   08 MAR 2021 JOB EXECUTION DATE
+
+
+           108 CARDS READ
+
+
+           206 SYSOUT PRINT RECORDS
+
+
+             0 SYSOUT PUNCH RECORDS
+
+
+            18 SYSOUT SPOOL KBYTES
+
+
+          0.00 MINUTES EXECUTION TIME
+         1 //KC03D28A JOB ,'ANUSHKA VERMA' ,MSGCLASS=H                             JOB04080
+         2 //JSTEP01  EXEC PGM=ASSIST
+         3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR
+         4 //SYSPRINT DD SYSOUT=*
+         5 //SYSIN    DD *
+           //*
+         6 //FT05F001 DD DSN=KC02038.CSCI360.DATAFA20(LABEX4DA),DISP=SHR
+           //*
+         7 //FT06F001 DD SYSOUT=*
+           //*
+         8 //SYSPRINT DD SYSOUT=*
+         9 //
+ ICH70001I KC03D28  LAST ACCESS AT 18:36:00 ON MONDAY, MARCH 8, 2021
+ IEFA111I KC03D28A IS USING THE FOLLOWING JOB RELATED SETTINGS:
+          SWA=ABOVE,TIOT SIZE=32K,DSENQSHR=DISALLOW,GDGBIAS=JOB
+ IEF236I ALLOC. FOR KC03D28A JSTEP01
+ IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IEF237I JES2 ALLOCATED TO SYSIN
+ IGD103I SMS ALLOCATED TO DDNAME FT05F001
+ IEF237I JES2 ALLOCATED TO FT06F001
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IEF142I KC03D28A JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+ IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB
+ IEF285I   KC03D28.KC03D28A.JOB04080.D0000102.?         SYSOUT
+ IEF285I   KC03D28.KC03D28A.JOB04080.D0000101.?         SYSIN
+ IGD104I KC02038.CSCI360.DATAFA20                     RETAINED,  DDNAME=FT05F001
+ IEF285I   KC03D28.KC03D28A.JOB04080.D0000103.?         SYSOUT
+ IEF285I   KC03D28.KC03D28A.JOB04080.D0000104.?         SYSOUT
+ IEF373I STEP/JSTEP01 /START 2021067.1845
+ IEF032I STEP/JSTEP01 /STOP  2021067.1845
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC
+         VIRT:   584K  SYS:   248K  EXT:        0K  SYS:    12620K
+         ATB- REAL:                  3372K  SLOTS:                     0K
+              VIRT- ALLOC:      13M SHRD:       0M
+ IEF375I  JOB/KC03D28A/START 2021067.1845
+ IEF033I  JOB/KC03D28A/STOP  2021067.1845
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC
+
+ *** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT
+
+ 
+
+                                                                                                                PAGE    1
+
+   LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                       1 ******************************************************************
+                                       2 *                                                                *
+                                       3 *  CSCI 360             LAB EXERCISE 4              SPRING 2021  *
+                                       4 *                                                                *
+                                       5 *  DATE DUE:  03/08/2021                                         *
+                                       6 *  TIME DUE:  11:59 PM                                           *
+                                       7 *                                                                *
+                                       8 *  AUTHOR:    ANUSHKA VERMA                                      *
+                                       9 *             (Z1911937)                                         *
+                                      10 *                                                                *
+                                      11 *  DESCRIPTION:                                                  *
+                                      12 *    THIS PROGRAM READS FROM FILES AND PERFORMS ARITHMETIC       *
+                                      13 *    OPERATIONS USING A LOOP.                                    *
+                                      14 *                                                                *
+                                      15 *                                                                *
+                                      16 ******************************************************************
+                                      17 *          COL. 10
+                                      18 *          |     COL. 16
+                                      19 *          |     |
+                                      20 *          v     v
+ 000000                               21 MAIN       CSECT
+ 000000                               22            USING MAIN,12      ESTABLISH ADDRESSABILITY ON REG 12
+ 000000 90EC D00C            0000C    23            STM   14,12,12(13) SAVE REGS IN CALLER'S SAVE AREA
+ 000004 18CF                          24            LR    12,15        COPY CSECT ADDRESS INTO REG 12
+ 000006 41E0 C0B4            000B4    25            LA    14,MAINSAVE  POINT R14 AT THE CSECT'S SAVE AREA
+ 00000A 50E0 D008            00008    26            ST    14,8(,13)    STORE ADDRESS OF THIS CSECT'S SAVE AREA
+ 00000E 50D0 E004            00004    27            ST    13,4(,14)    STORE ADDRESS OF CALLER'S SAVE AREA
+ 000012 18DE                          28            LR    13,14        POINT R13 AT CALLER'S SAVE AREA
+                                      29 *
+ 000014 E000 C0FC 0050 000FC          30            XREAD BUFFER,80    PRIMMING READ
+                                      31 *
+ 00001A 4770 C094            00094    32 PROCLOOP   BNZ   PROCDONE     BRANCH TO PROCDONE IF EOF
+                                      33 *
+                                      34 *
+ 00001E F223 C14C C0FC 0014C 000FC    35            PACK  PX1(3),BUFFER(4)    PACK X1
+ 000024 F223 C150 C101 00150 00101    36            PACK  PX2(3),BUFFER+5(4)  PACK X2
+                                      37 *
+                                      38 *
+ 00002A F223 C154 C106 00154 00106    39            PACK  PX3(3),BUFFER+10(4) PACK X3
+                                      40 *          PACK  PY(3),BUFFER+5(4)   PACK Y
+                                      41 *
+                                      42 *
+ 000030 F862 C15C C14C 0015C 0014C    43            ZAP   ACCUM(7),PX1(3)    CLEARS & PUTS IN X IN ACCUMULATOR
+ 000036 FC62 C15C C14C 0015C 0014C    44            MP    ACCUM(7),PX1(3)    HELPS TO SQUARE IT
+ 00003C F065 C15C 003E 0015C 0003E    45            SRP   ACCUM(7),64-2,5    ROUND TO 2 DECIMQL PLACES
+ 000042 FC62 C15C C0A8 0015C 000A8    46            MP    ACCUM(7),=PL3'250' MULTIPLY BY 250
+ 000048 F065 C15C 003E 0015C 0003E    47            SRP   ACCUM(7),64-2,5    PREPARE FOR MULT W/ RIGHT SHIFT
+ 00004E F872 C163 C150 00163 00150    48            ZAP   PTEMP(8),PX2(3)    CLEARS & PUTS IN X IN ACCUMULATOR
+ 000054 FC72 C163 C0AB 00163 000AB    49            MP    PTEMP(8),=PL3'525' MULTIPLY BY 525
+ 00005A F075 C163 003E 00163 0003E    50            SRP   PTEMP(8),64-2,5    PREPARE FOR MULT W/RIGHT SHIFT
+ 000060 FA67 C15C C163 0015C 00163    51            AP    ACCUM(7),PTEMP(8)  ACCUMLATE INTO RESULT
+ 000066 F862 C16B C0AE 0016B 000AE    52            ZAP   PTEMP2(7),=PL3'10075' CLEARS & PUTS IN X IN ACCUMU
+
+                                                                                                                PAGE    2
+
+   LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+ 00006C F060 C16B 0002 0016B 00002    53            SRP   PTEMP2(7),2,0      PREPARE FOR DIV W/ LEFT SHIFT
+ 000072 FD62 C16B C154 0016B 00154    54            DP    PTEMP2(7),PX3(3)   DIVIDE RESULT BY X3
+ 000078 FA63 C15C C16B 0015C 0016B    55            AP    ACCUM(7),PTEMP2(4) ACCUMULATE INTO RESULT
+ 00007E F836 C158 C15C 00158 0015C    56            ZAP   PY(4),ACCUM(7)     CLEAR & PUT Y IN PY
+                                      57 *
+                                      58 *
+ 000084 E060 C14C 0010 0014C          59            XDUMP PX1,16
+                                      60 *
+                                      61 *
+ 00008A E000 C0FC 0050 000FC          62            XREAD BUFFER,80          READS NEXT RECORD
+ 000090 47F0 C01A            0001A    63            B     PROCLOOP           RESTART LOOP
+                                      64 *
+                                      65 *
+ 000094 1BFF                          66 PROCDONE   SR    15,15              SET RETURN CODE TO 0
+ 000096 58D0 D004            00004    67            L     13,4(,13)          POINT R13 TO CALLER'S SAVE AREA
+ 00009A 58E0 D00C            0000C    68            L     14,12(,13)         RESTORE R14
+ 00009E 980C D014            00014    69            LM    0,12,20(13)        RESTORE R0 THRU R12
+ 0000A2 07FE                          70            BR    14                 RETURN TO CALLER
+                                      71 *
+                                      72            LTORG                    LITERAL ORGANIZATION
+ 0000A8 00250C                        73                =PL3'250'
+ 0000AB 00525C                        74                =PL3'525'
+ 0000AE 10075C                        75                =PL3'10075'
+                                      76 *
+ 0000B4 FFFFFFFFFFFFFFFF              77 MAINSAVE   DC    18F'-1'            CURRENT REG SAVE AREA
+                                      78 *
+ 0000FC                               79 BUFFER     DS    CL80               BUFFER READ
+                                      80 *
+ 00014C 00000C                        81 PX1        DC    PL3'0'             PACKED X1
+ 00014F FF                            82            DC    X'FF'
+                                      83 *
+ 000150 00000C                        84 PX2        DC    PL3'0'             PACKED X2
+ 000153 FF                            85            DC    X'FF'
+                                      86 *
+ 000154 00000C                        87 PX3        DC    PL3'0'             PACKED X3
+ 000157 FF                            88            DC    X'FF'
+                                      89 *
+ 000158 0000000C                      90 PY         DC    PL4'0'             PACKED Y
+                                      91 *
+ 00015C 0000000000000C                92 ACCUM      DC    PL7'0'             TERM ACCUMULATION FIELD
+                                      93 *
+ 000163 000000000000000C              94 PTEMP      DC    PL8'0'             INTERMEDIATE RESULT FIELD
+                                      95 *
+ 00016B 0000000000000C                96 PTEMP2     DC    PL7'0'             SEC INTERMEDIATE RESULT FIELD
+                                      97 *
+                                      98            END   MAIN
+
+ ***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS
+
+ *** DYNAMIC CORE AREA USED:  LOW:    3968 HIGH:     624 LEAVING:  488976 FREE BYTES. AVERAGE:       46 BYTES/STMT ***
+
+ *** ASSEMBLY TIME =    0.000 SECS,    99000 STATEMENTS/SEC ***
+
+ *** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***
+
+ BEGIN XSNAP - CALL     1 AT E000008A USER STORAGE
+
+                              CORE ADDRESSES SPECIFIED-     00014C TO 00015C
+ 000140   40404040 40404040 40404040 00205FFF    03010FFF 01700FFF 0017445C 00000000   *            ....................*
+
+ 
+
+ BEGIN XSNAP - CALL     2 AT E000008A USER STORAGE
+
+                              CORE ADDRESSES SPECIFIED-     00014C TO 00015C
+ 000140   40404040 40404040 40404040 00120FFF    07000FFF 00520FFF 0039047C 00000000   *            ....................*
+
+ 
+
+ BEGIN XSNAP - CALL     3 AT E000008A USER STORAGE
+
+                              CORE ADDRESSES SPECIFIED-     00014C TO 00015C
+ 000140   40404040 40404040 40404040 00000FFF    02000FFF 02205FFF 0010956C 00000000   *            ....................*
+
+ 
+
+ BEGIN XSNAP - CALL     4 AT E000008A USER STORAGE
+
+                              CORE ADDRESSES SPECIFIED-     00014C TO 00015C
+ 000140   40404040 40404040 40404040 00140FFF    01011FFF 00225FFF 0010275C 00000000   *            ....................*
+
+ 
+
+ BEGIN XSNAP - CALL     5 AT E000008A USER STORAGE
+
+                              CORE ADDRESSES SPECIFIED-     00014C TO 00015C
+ 000140   40404040 40404040 40404040 09000FFF    00000FFF 00400FFF 2027518C 00000020   *            ......... ..........*
+
+ 
+
+ BEGIN XSNAP - CALL     6 AT E000008A USER STORAGE
+
+                              CORE ADDRESSES SPECIFIED-     00014C TO 00015C
+ 000140   40404040 40404040 40404040 01025FFF    02090FFF 01011FFF 0038234C 00000000   *            ....................*
+
+ 
+
+ BEGIN XSNAP - CALL     7 AT E000008A USER STORAGE
+
+                              CORE ADDRESSES SPECIFIED-     00014C TO 00015C
+ 000140   40404040 40404040 40404040 03025FFF    00000FFF 00355FFF 0231603C 00000002   *            ....................*
+
+ 
+
+ BEGIN XSNAP - CALL     8 AT E000008A USER STORAGE
+
+                              CORE ADDRESSES SPECIFIED-     00014C TO 00015C
+ 000140   40404040 40404040 40404040 00100FFF    01044FFF 00515FFF 0007687C 00000000   *            ....................*
+
+ 
+
+ BEGIN XSNAP - CALL     9 AT E000008A USER STORAGE
+
+                              CORE ADDRESSES SPECIFIED-     00014C TO 00015C
+ 000140   40404040 40404040 40404040 06075FFF    02090FFF 04205FFF 0933852C 00000009   *            ....................*
+
+ 
+
+ BEGIN XSNAP - CALL    10 AT E000008A USER STORAGE
+
+                              CORE ADDRESSES SPECIFIED-     00014C TO 00015C
+ 000140   40404040 40404040 40404040 00150FFF    00000FFF 00100FFF 0010638C 00000000   *            ....................*
+
+ 
+
+ *** EXECUTION TIME =    0.000 SECS.       223 INSTRUCTIONS EXECUTED -   223000 INSTRUCTIONS/SEC ***
+
+ *** AM004 - NORMAL USER TERMINATION BY RETURN ***
