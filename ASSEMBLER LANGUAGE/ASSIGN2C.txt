@@ -1,0 +1,169 @@
+
+                    J E S 2  J O B  L O G  --  S Y S T E M  2 9 6 4  --  N O D E  S V S C J E S 2
+
+ 
+ 18.43.34 JOB06222 ---- THURSDAY,  04 FEB 2021 ----
+ 18.43.34 JOB06222  IRR010I  USERID KC03D28  IS ASSIGNED TO THIS JOB.
+ 18.43.34 JOB06222  ICH70001I KC03D28  LAST ACCESS AT 18:40:28 ON THURSDAY, FEBRUARY 4, 2021
+ 18.43.34 JOB06222  $HASP373 KC03D28A STARTED - INIT 3    - CLASS A        - SYS 2964
+ 18.43.34 JOB06222  $HASP395 KC03D28A ENDED - RC=0000
+
+ ------ JES2 JOB STATISTICS ------
+
+
+   04 FEB 2021 JOB EXECUTION DATE
+
+
+            77 CARDS READ
+
+
+           138 SYSOUT PRINT RECORDS
+
+
+             0 SYSOUT PUNCH RECORDS
+
+
+            13 SYSOUT SPOOL KBYTES
+
+
+          0.00 MINUTES EXECUTION TIME
+         1 //KC03D28A JOB ,'ANUSHKA VERMA' ,MSGCLASS=H                             JOB06222
+         2 //JSTEP01  EXEC PGM=ASSIST
+         3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR
+         4 //SYSPRINT DD SYSOUT=*
+         5 //SYSIN    DD *
+         6 //
+ ICH70001I KC03D28  LAST ACCESS AT 18:40:28 ON THURSDAY, FEBRUARY 4, 2021
+ IEFA111I KC03D28A IS USING THE FOLLOWING JOB RELATED SETTINGS:
+          SWA=ABOVE,TIOT SIZE=32K,DSENQSHR=DISALLOW,GDGBIAS=JOB
+ IEF236I ALLOC. FOR KC03D28A JSTEP01
+ IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IEF237I JES2 ALLOCATED TO SYSIN
+ IEF142I KC03D28A JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+ IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB
+ IEF285I   KC03D28.KC03D28A.JOB06222.D0000102.?         SYSOUT
+ IEF285I   KC03D28.KC03D28A.JOB06222.D0000101.?         SYSIN
+ IEF373I STEP/JSTEP01 /START 2021035.1843
+ IEF032I STEP/JSTEP01 /STOP  2021035.1843
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC
+         VIRT:   584K  SYS:   244K  EXT:        0K  SYS:    11948K
+         ATB- REAL:                  4128K  SLOTS:                     0K
+              VIRT- ALLOC:      13M SHRD:       0M
+ IEF375I  JOB/KC03D28A/START 2021035.1843
+ IEF033I  JOB/KC03D28A/STOP  2021035.1843
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC
+
+ *** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT
+
+ 
+
+                                                                                                                PAGE    1
+
+   LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+                                       1 ******************************************************************
+                                       2 *                                                                *
+                                       3 * CSCI 360               ASSIGNMENT 2                SPRING 2021 *
+                                       4 *                                                                *
+                                       5 * DATE DUE : 02/5/2021                                           *
+                                       6 * TIME DUE : 11:59 PM                                            *
+                                       7 *                                                                *
+                                       8 * Replace KC03nnn above with your KC - ID assigned to you by     *
+                                       9 * your instructor . DO NOT LEAVE OUT THE CAPITAL LETTER A AT     *
+                                      10 * THE END OF YOUR KC - ID ! Also , put your name in all capital  *
+                                      11 * letters in the first line where it says 'your name here'.      *
+                                      12 *                                                                *
+                                      13 * Note that this documentation box does not go past column 65!   *
+                                      14 *                                                                *
+                                      15 ******************************************************************
+                                      16 *        COL. 10
+                                      17 *        |     COL . 16
+                                      18 *        |     |
+                                      19 *        v     v
+ 000000                               20 ASSIGN2C CSECT
+ 000000                               21          USING ASSIGN2C,15 ESTABLISH ADDRESSABILITY ON REG 15
+ 000000 4120 0011            00011    22          LA    2,17        LOAD 17 INTO REG 2
+ 000004 4130 007E            0007E    23          LA    3,126       LOAD 126 INTO REG 3
+ 000008 4140 003A            0003A    24          LA    4,58        LOAD 58 INTO REG 4
+                                      25 *
+ 00000C 1B34                          26          SR    3,4         SUBTRACT REG 4 FROM REG 3
+ 00000E 1A32                          27          AR    3,2         ADDING REG 4 ' S CONTENTS TO REG 2 ' S
+ 000010 5030 F058            00058    28          ST    3,RESULT1   STORING REG 3 ' S CONTENTS TO RESULT1
+ 000014 5230 F078            00078    29          XDECO 3,RES1OUT   CONVERTS NUMBERS IN REG 3 TO PRINTABLE
+ 000018 E020 F060 0085 00060          30          XPRNT PRINTLN1,133
+                                      31 *
+ 00001E 4120 007A            0007A    32          LA    2,122       LOAD 17 INTO REG 2
+ 000022 4150 007E            0007E    33          LA    5,126       LOAD 126 INTO REG 3
+ 000026 4140 0038            00038    34          LA    4,56        LOAD 58 INTO REG 4
+ 00002A 1A54                          35          AR    5,4         ADDING REG 4 ' S CONTENTS TO REG 3 ' S
+ 00002C 1B52                          36          SR    5,2         SUBTRACT REG 2 FROM REG 3
+ 00002E 5050 F05C            0005C    37          ST    5,RESULT2   STORING REG 3 ' S CONTENTS TO RESULT2
+ 000032 5250 F0FD            000FD    38          XDECO 5,RES2OUT   CONVERTS NUMBERS IN REG 5 TO PRINTABLE
+ 000036 E020 F0E5 0085 000E5          39          XPRNT PRINTLN2,133
+                                      40 *
+ 00003C 1A35                          41          AR    3,5         ADDS RESULT 2 TO RESULT 1
+ 00003E 5230 F17B            0017B    42          XDECO 3,SUMOUT    CONVERTS NUMBERS IN REG 3 TO PRINTABLE
+ 000042 E020 F16A 0085 0016A          43          XPRNT PRINTLN3,133
+                                      44 *
+ 000048 E160 0000 0000 00000          45          XDUMP ,           DUMP CONTENTS OF ALL 16 REGS
+ 00004E E060 F058 0008 00058          46          XDUMP RESULT1,8   DUMP 8 BYTES BEGINNING AT LABEL RESULT1
+ 000054 07FE                          47          BCR   B'1111',14  UNCONDITIONAL RETURN TO CALLER ( OS )
+                                      48 *
+ 000058                               49 RESULT1  DS    F           DECLARING STORAGE OF RESULT1 = NULL
+ 00005C                               50 RESULT2  DS    F           DECLARING STORAGE OF RESULT2 = NULL
+                                      51 *
+                                      52 * First print line
+
+                                                                                                                PAGE    2
+
+   LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT
+ 000060 F1                            53 PRINTLN1 DC    C'1'        CARRIAGE CONTROL CHAR (NEW PAGE)
+ 000061 C68999A2A3408598              54          DC    C'First equation result: '
+ 000078                               55 RES1OUT  DS    CL12        HOLDS RESULT1 IN CHAR FORMAT
+ 000084 4040404040404040              56          DC    97C' '
+                                      57 * Second print line
+ 0000E5 40                            58 PRINTLN2 DC    C' '        CARRIAGE CONTROL CHAR (SINGLE SPACE)
+ 0000E6 E285839695844085              59          DC    C'Second equation result:'
+ 0000FD                               60 RES2OUT  DS    CL12        HOLDS RESULT2 IN CHAR FORMAT
+ 000109 4040404040404040              61          DC    97C' '
+                                      62 * Third print line
+ 00016A 40                            63 PRINTLN3 DC    C' '        CARRIAGE CONTROL CHAR (SINGLE SPACE)
+ 00016B E2A4944096864099              64          DC    C'Sum of results: '
+ 00017B                               65 SUMOUT   DS    CL12        HOLDS SUM RESULT IN CHAR FORMAT
+ 000187 4040404040404040              66          DC    97C' '
+                                      67 *
+                                      68          LTORG             LITERAL ORGANIZATION
+                                      69 *
+                                      70          END ASSIGN2C
+
+ ***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS
+
+ *** DYNAMIC CORE AREA USED:  LOW:    2872 HIGH:     508 LEAVING:  490188 FREE BYTES. AVERAGE:       47 BYTES/STMT ***
+
+ *** ASSEMBLY TIME =    0.000 SECS,    71000 STATEMENTS/SEC ***
+
+ *** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***
+
+ First equation result:           85
+ Second equation result:          60
+ Sum of results:          145                                                                                                 5555   
+
+ BEGIN XSNAP - CALL     1 AT E000004E USER REGISTERS
+
+  REGS 0-7      F4F4F4F4    F4F4F4F4    0000007A    00000091    00000038    0000003C    F4F4F4F4    F4F4F4F4
+  REGS 8-15     F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4    000001E8    FFFE7960    00000000
+
+ 
+
+ BEGIN XSNAP - CALL     2 AT E0000054 USER STORAGE
+
+                              CORE ADDRESSES SPECIFIED-     000058 TO 000060
+ 000040   F17BE020 F16A0085 E1600000 0000E060    F0580008 07FEF5F5 00000055 0000003C   *1...1...........0.....55........*
+
+ 
+
+ *** EXECUTION TIME =    0.000 SECS.        22 INSTRUCTIONS EXECUTED -    22000 INSTRUCTIONS/SEC ***
+
+ *** FIRST CARD NOT READ: NO CARDS READ:FILE UNOPENED
+
+ *** AM004 - NORMAL USER TERMINATION BY RETURN ***
