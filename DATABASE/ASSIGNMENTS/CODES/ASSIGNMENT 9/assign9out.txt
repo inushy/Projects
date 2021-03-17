@@ -1,0 +1,163 @@
+MariaDB [z1911937]> USE z1911937;
+Database changed
+MariaDB [z1911937]> CREATE TABLE Taco
+    -> (
+    ->      pk INT PRIMARY KEY,
+    ->      data CHAR(15)
+    -> );
+Query OK, 0 rows affected (0.273 sec)
+
+MariaDB [z1911937]> START TRANSACTION;
+Query OK, 0 rows affected (0.000 sec)
+
+MariaDB [z1911937]> INSERT INTO Taco
+    ->      VALUES(1, 'dataA');
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [z1911937]> INSERT INTO Taco
+    ->      VALUES(2, 'dataB');
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [z1911937]> INSERT INTO Taco
+    ->      VALUES(3, 'dataC');
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [z1911937]> USE z1911937;
+Database changed
+MariaDB [z1911937]> SELECT * FROM Taco;
+Empty set (0.001 sec)
+
+MariaDB [z1911937]> INSERT INTO  Taco 
+    ->     VALUES(4, 'dataD');
+Query OK, 1 row affected (0.095 sec)
+
+MariaDB [z1911937]> INSERT INTO Taco 
+    ->     VALUES(5, 'dataE');
+Query OK, 1 row affected (0.062 sec)
+
+MariaDB [z1911937]> COMMIT;
+Query OK, 0 rows affected (0.086 sec)
+
+MariaDB [z1911937]> SELECT * FROM Taco;
++----+-------+
+| pk | data  |
++----+-------+
+|  1 | dataA |
+|  2 | dataB |
+|  3 | dataC |
+|  4 | dataD |
+|  5 | dataE |
++----+-------+
+5 rows in set (0.001 sec)
+
+MariaDB [z1911937]> \t
+MariaDB [z1911937]> SELECT * FROM Taco;
++----+-------+
+| pk | data  |
++----+-------+
+|  1 | dataA |
+|  2 | dataB |
+|  3 | dataC |
+|  4 | dataD |
+|  5 | dataE |
++----+-------+
+5 rows in set (0.000 sec)
+
+MariaDB [z1911937]> \t
+MariaDB [z1911937]> USE z1911937;
+Database changed
+MariaDB [z1911937]> START TRANSACTION;
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [z1911937]> DELETE FROM Taco WHERE pk = 3;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [z1911937]> SELECT * FROM Taco;
++----+-------+
+| pk | data  |
++----+-------+
+|  1 | dataA |
+|  2 | dataB |
+|  4 | dataD |
+|  5 | dataE |
++----+-------+
+4 rows in set (0.001 sec)
+
+MariaDB [z1911937]> UPDATE Taco
+    ->   SET Data = 'changed'
+    ->   WHERE pk = 2;
+Query OK, 1 row affected (0.001 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1911937]> UPDATE Taco
+    ->   SET Data = 'changed 2'
+    ->   WHERE pk = 4;
+Query OK, 1 row affected (0.001 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1911937]> INSERT INTO Taco VALUES(6, 'dataF');
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [z1911937]> SELECT * FROM Taco;
++----+-----------+
+| pk | data      |
++----+-----------+
+|  1 | dataA     |
+|  2 | changed   |
+|  4 | changed 2 |
+|  5 | dataE     |
+|  6 | dataF     |
++----+-----------+
+5 rows in set (0.001 sec)
+
+MariaDB [z1911937]> ROLLBACK;
+Query OK, 0 rows affected (0.076 sec)
+
+MariaDB [z1911937]> SELECT * FROM Taco;
++----+-------+
+| pk | data  |
++----+-------+
+|  1 | dataA |
+|  2 | dataB |
+|  3 | dataC |
+|  4 | dataD |
+|  5 | dataE |
++----+-------+
+5 rows in set (0.001 sec)
+
+MariaDB [z1911937]>  \t exit;
+MariaDB [z1911937]> USE z1911937;
+Database changed
+MariaDB [z1911937]> START TRANSACTION;
+Query OK, 0 rows affected (0.000 sec)
+
+MariaDB [z1911937]> USE z1911937;
+Database changed
+MariaDB [z1911937]> START TRANSACTION;
+Query OK, 0 rows affected (0.000 sec)
+
+MariaDB [z1911937]> UPDATE Taco
+    ->   SET data = 'data1A'
+    ->   WHERE pk = 1;
+Query OK, 1 row affected (0.001 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1911937]> UPDATE Taco
+    ->   SET data = 'data2B'
+    ->   WHERE pk = 2;
+Query OK, 1 row affected (0.001 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1911937]> UPDATE Taco
+    ->   SET data = 'data5E'
+    ->   WHERE pk = 5;
+Query OK, 1 row affected (0.001 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1911937]> UPDATE Taco
+    ->   SET data = 'data12B'
+    ->   WHERE pk = 1;
+Ctrl-C -- query killed. Continuing normally.
+ERROR 1317 (70100): Query execution was interrupted
+MariaDB [z1911937]> \t
+MariaDB [z1911937]> \t
