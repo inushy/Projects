@@ -1,8 +1,10 @@
 /*
 	<Anushka Verma> (<Z1911937>)
 	Database
-    Assignment 10
+   	Assignment 10
 	03/22/2021
+	
+	Program Description: Access To MariaDB Using C++
 */
 
 #include <iostream>
