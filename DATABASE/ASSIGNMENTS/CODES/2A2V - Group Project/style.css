@@ -1,0 +1,220 @@
+/* Anushka Verma, Aby Shulgan, Vansh Rai, Vlad Oprescu
+   Database
+   2A2V - Group project final
+   CSCI 466-1
+   04/21/2021
+*/
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing:content-box;
+	}
+	
+body {
+	font-family:'Montserrat Alternates', sans-serif;/*sets default font for entire site*/
+	background-color:white;
+}
+
+img{max-width:100%;}
+
+/*these are some commonly used styles you can add as defaults*/
+.bold{font-weight:bold;}
+.italics{font-style:italic;}
+
+.clearfix {clear:both;} /*used to clear floats*/
+
+/*Stylizes all the nav buttons together on the homepage*/
+#nav-buttons {
+    display: flex;
+    flex-direction: row;
+    max-width: 700px;
+    color: white;
+    margin: 260px auto auto auto;
+}
+
+/*Stylizes nav button individually on the homepage*/
+.nav-button {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    background-color: black;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px;
+}
+
+/*Stylizes all the nav icons together on the other php pages*/
+#nav-icons {
+    display: flex;
+    flex-direction: row;
+    max-width: 700px;
+    color: white;
+    margin: .395px 0px .395px auto;
+}
+
+/*Stylizes nav icon individually on the other php pages*/
+.nav-icon {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    background-color: black;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 20px;
+}
+
+/*Stylizes the nav icon when you hover over it*/
+.nav-icon:hover{
+    background-color: darkgray;
+    text-decoration: none;
+}
+
+/*Stylizes the nav button when you hover over it*/
+.nav-button:hover{
+    background-color: darkgray;
+    text-decoration: none;
+}
+
+/*Stylizes the background image on all the pages*/
+#main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url(./Karaoke_website_img.jpg);
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size: cover; 
+    height: 1400px;
+}
+
+/*Stylizes the display of the logo and the nav bar*/
+#style-formatting {
+    display: flex;
+    flex-direction: row;
+}
+
+/*Stylizes only the nav buttons*/
+.nav-sty {
+    height: 10%;
+    width: 100%;
+}
+
+/*Stylizes the Title*/
+#Title {
+    margin: .75px auto .60px auto;
+}
+
+/*Stylizes the content in a wrap*/
+#wrap-container {
+    max-width: 50%;
+    padding: 30px;
+    margin: .75px auto .60px auto;
+}
+
+/*Styles Some of the Texts in the forms*/
+b {
+    font-family:'Montserrat Alternates', sans-serif;
+    color:white;  
+}
+
+/*Media queries*/
+@media only screen and (max-width: 600px) {
+    .wrap{
+        display:fixed;
+      }
+    #nav-buttons{
+        flex-direction:column;
+        margin: 190px auto auto auto;
+    }
+    #nav-icons{
+        flex-direction:column;
+        margin: 160px 150px auto .5px;
+    }
+    .container{
+        display:fixed;
+        padding:0px;
+    }
+    #footer{
+        display:fixed;
+    }
+    #Title {
+        margin: .90px auto .80px auto;
+    }
+    .nav-sty {
+        margin: .5px auto .5px auto;
+    }
+}
+
+/*Stylizes header 1*/
+h1 {
+    text-align:center;
+	font-family: 'Montserrat Alternates', sans-serif;
+}
+
+/*Stylizes header 2*/
+h2 {
+    text-align:center;
+	font-family: 'Arapey', serif;
+    font-size:50pt;
+    color: white;
+}
+
+/*Stylizes the container that contains all the formas and tables*/
+.container {
+    padding: 40px;
+    background-color: rgb(28, 29, 29);
+    display: fixed;
+    border-radius: 20px;
+    margin: .75px auto .60px auto;
+}
+
+/*Stylizes the intput text for the forms*/
+input[type=text] {
+    width: 99%;
+    padding: 5px;
+    margin: 5px 40px 22px 0px;
+    display: center;
+    border: none;
+    background: #f1f1f1;
+}
+  
+input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+input[type=text]{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size:1em;
+    width: 99%;
+}
+
+/*Stylizes the Submit buttons*/
+input[type=Submit] {
+    display: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=Submit]:hover {
+    background-color: #f00e77;
+}
+
+/*Stylizes the footer*/
+#footer{
+    background-color:rgb(1, 1, 5);
+    text-align: center;
+}
+
+/*Stylizes the overall text*/
+text{
+    color:white;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size:1em;
+}
