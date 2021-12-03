@@ -1,6 +1,6 @@
 # Projects
 
-About Me
+About Me:
 
 Hi I’m Anushka, a software engineer student at Northern Illinois University. 
 
